@@ -1,0 +1,135 @@
+/*//////////////////////////////////////////////////////////////////////////////
+///                                PORTFOLIO                                ///
+//============================================================================//
+//        Author: Marcin Żemlok
+//         Email: marcinzemlok@gmail.com
+//       Version: 0.1
+//
+//   Description: My portfolio website
+//
+// Creation date: 29/02/2020
+================================= CHANGE LOG ===================================
+// [29/02/2020]        Marcin Żemlok
+        Initial draft.                                                       ///
+//////////////////////////////////////////////////////////////////////////////*/
+*, *::before, *::after {
+    border: none;
+    margin: 0;
+    padding: 0;
+
+    font-family: sans-serif;
+    color: rgb(220, 220, 220);
+}
+
+/*///////////////////////////////////////////////////////////////////////////*/
+/*/ GENERAL                                                                /*/
+/*/////////////////////////////////////////////////////////////////////////*/
+body {
+    background-image: url(../img/steel-backgrould.jpg);
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body::before {
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    content: "";
+    background-color: rgba(0,0,0,0.8);
+
+    z-index: -1;
+}
+
+/*///////////////////////////////////////////////////////////////////////////*/
+/*/ COMMON                                                                 /*/
+/*/////////////////////////////////////////////////////////////////////////*/
+.green-text {
+    color: #6c8a0c;
+}
+
+/*///////////////////////////////////////////////////////////////////////////*/
+/*/ NAVIGATINO                                                             /*/
+/*/////////////////////////////////////////////////////////////////////////*/
+#navigation {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    background-color: rgb(100, 100, 100);
+
+    clip-path: url("#nav-clip");
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#navigation::before {
+    content: "";
+
+    height: 22%;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: red;
+
+    clip-path: url("#nav-clip");
+}
+
+#navigation svg {
+    height: 100%;
+    width: 150px;
+}
+
+#nav-clip text {
+    font-size: 1.25rem;
+    fill: white;
+    fill-opacity: 0.5;
+
+    font-weight: 1000;
+}
+
+#nav-clip rect {
+    height: 65%;
+    width: 5px;
+}
+
+#nav-clip {
+    display: flex;
+}
+
+/*///////////////////////////////////////////////////////////////////////////*/
+/*/ SECTION                                                                /*/
+/*/////////////////////////////////////////////////////////////////////////*/
+.section {
+    padding: 0 10%;
+
+    margin: 0 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*****************/
+/* HELLO SECTION */
+/*****************/
+#hello-section {
+    height: 100vh;
+}
+
+#hello-section h1 {
+    font-family: 'Oxanium';
+    font-size: 3rem;
+    text-align: center;
+}
