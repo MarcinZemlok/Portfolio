@@ -3,7 +3,7 @@
 //============================================================================//
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.1
+//       Version: 0.2
 //
 //   Description: My portfolio website
 //
@@ -11,6 +11,9 @@
 ================================= CHANGE LOG ===================================
 // [29/02/2020]        Marcin Żemlok
         Initial draft.                                                       ///
+--------------------------------------------------------------------------------
+// [01/03/2020]        Marcin Żemlok
+        Established navigation concept.                                      ///
 //////////////////////////////////////////////////////////////////////////////*/
 *, *::before, *::after {
     border: none;
@@ -48,6 +51,13 @@ body::before {
 /*///////////////////////////////////////////////////////////////////////////*/
 /*/ COMMON                                                                 /*/
 /*/////////////////////////////////////////////////////////////////////////*/
+hr {
+    margin: 5px 150px;
+
+    border: none;
+    box-shadow: 0 0 5px 1px #bada55;
+}
+
 .green-text {
     color: #6c8a0c;
 }
@@ -58,14 +68,6 @@ body::before {
 #navigation {
     height: 100vh;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    background-color: rgb(100, 100, 100);
-
-    clip-path: url("#nav-clip");
-
     position: fixed;
     top: 0;
     left: 0;
@@ -74,38 +76,61 @@ body::before {
 #navigation::before {
     content: "";
 
-    height: 22%;
-    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 10px;
 
-    position: fixed;
-    top: 0;
-    left: 0;
+    height: 80%;
+    width: 5px;
 
-    background-color: red;
-
-    clip-path: url("#nav-clip");
+    background-color: rgb(100, 100, 100);
 }
 
 #navigation svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
     height: 100%;
-    width: 150px;
+    width: 100%;
 }
 
-#nav-clip text {
+#nav-progres {
+    x: 10px;
+    y: 10%;
+
+    height: 0;
+    width: 5px;
+
+    fill: #bada55;
+}
+
+#nav-buttons {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.nav-button {
+    margin-left: 25px;
+    padding: 5px;
+
     font-size: 1.25rem;
-    fill: white;
-    fill-opacity: 0.5;
+    color: rgba(255, 255, 255, .2);
 
     font-weight: 1000;
+
+    transition: box-shadow .2s ease-in-out;
+    transition: color .2s ease-in-out;
 }
 
-#nav-clip rect {
-    height: 65%;
-    width: 5px;
-}
-
-#nav-clip {
-    display: flex;
+.nav-button:hover {
+    cursor: pointer;
+    box-shadow: inset 1px 0 2px 0 #bada55,
+                inset 1px 0 10px 0 #bbda558e;
+    color: rgb(220, 220, 220);
 }
 
 /*///////////////////////////////////////////////////////////////////////////*/

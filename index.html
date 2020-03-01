@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.1
+//       Version: 0.2
 //
 //   Description: My portfolio page.
 //
@@ -11,6 +11,9 @@
 ================================== CHANGE LOG ==================================
 // [29/02/2020]        Marcin Żemlok
         Work start.                                                          ///
+--------------------------------------------------------------------------------
+// [01/03/2020]        Marcin Żemlok
+        Established navigation concept.                                      ///
 /////////////////////////////////////////////////////////////////////////////-->
 <!DOCTYPE html>
 <html lang="en">
@@ -30,22 +33,14 @@
     <body>
         <nav id="navigation">
             <svg>
-                <clipPath id="nav-clip">
-                    <rect y="15%" x="10px" />
-                    <text x="20px" y="20%">
-                        HOME
-                    </text>
-                    <text x="20px" y="40%">
-                        ABOUT ME
-                    </text>
-                    <text x="20px" y="60%">
-                        SKILLS
-                    </text>
-                    <text x="20px" y="80%">
-                        CONTACT
-                    </text>
-                </clipPath>
+                <rect id="nav-progres" />
             </svg>
+            <div id="nav-buttons">
+                <div class="nav-button">HOME</div>
+                <div class="nav-button">ABOUT ME</div>
+                <div class="nav-button">SKILLS</div>
+                <div class="nav-button">CONTACT</div>
+            </div>
         </nav>
 
         <div class="section" id="hello-section">
@@ -53,23 +48,45 @@
                 applications ;)</h1>
         </div>
 
+        <hr>
+
         <div class="section" id="about-section">
-            about-section
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed odio facilisis, aliquet massa sed, lacinia
+            nisi. Maecenas arcu velit, fringilla at ipsum nec, consectetur suscipit nunc. Quisque maximus convallis
+            efficitur. Phasellus ut metus porttitor, sodales lacus eget, dignissim tellus. In hac habitasse platea
+            dictumst. Proin a tincidunt mauris. Proin quis efficitur lacus.
         </div>
+
+        <hr>
 
         <div class="section" id="skills-section">
-            skills-section
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed odio facilisis, aliquet massa sed, lacinia
+            nisi. Maecenas arcu velit, fringilla at ipsum nec, consectetur suscipit nunc. Quisque maximus convallis
+            efficitur. Phasellus ut metus porttitor, sodales lacus eget, dignissim tellus. In hac habitasse platea
+            dictumst. Proin a tincidunt mauris. Proin quis efficitur lacus.
         </div>
+
+        <hr>
 
         <div class="section" id="work-section">
-            work-section
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed odio facilisis, aliquet massa sed, lacinia
+            nisi. Maecenas arcu velit, fringilla at ipsum nec, consectetur suscipit nunc. Quisque maximus convallis
+            efficitur. Phasellus ut metus porttitor, sodales lacus eget, dignissim tellus. In hac habitasse platea
+            dictumst. Proin a tincidunt mauris. Proin quis efficitur lacus.
         </div>
+
+        <hr>
 
         <div class="section" id="contact-section">
-            contact-section
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed odio facilisis, aliquet massa sed, lacinia
+            nisi. Maecenas arcu velit, fringilla at ipsum nec, consectetur suscipit nunc. Quisque maximus convallis
+            efficitur. Phasellus ut metus porttitor, sodales lacus eget, dignissim tellus. In hac habitasse platea
+            dictumst. Proin a tincidunt mauris. Proin quis efficitur lacus.
         </div>
 
-        <footer>footer</footer>
+        <hr>
+
+        <footer>Lorem ipsum dolor sit amet.</footer>
 
         <script src="js/index.js"></script>
     </body>
