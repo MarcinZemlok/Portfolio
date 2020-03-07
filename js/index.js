@@ -47,9 +47,35 @@ class TimelinePoint {
      * @param {Object} point
      * @param {Object} path
      */
-    constructor(point, path) {
+    constructor(point, path, x, y, r) {
+        this.x = x
+        this.y = y
+        this.r = r
         this.point = point;
         this.path = path;
+
+        // Point settings
+        this.point.setAttribute('cx', this.x);
+        this.point.setAttribute('cy', this.y);
+        this.point.setAttribute('r', this.r);
+
+        // Path settings
+        this.pathGap = 10;
+        this.calculatePath();
+        this.path.setAttribute('d', this.pathString);
+
+    }
+
+    calculatePath() {
+        this.pathString = "";
+        // Move to the beginning of first arc
+        this.pathString = `${this.pathString} M ${this.x} ${this.y - this.r - this.pathGap}`;
+        // Draw first arc
+        this.pathString = `${this.pathString} A ${this.r + this.pathGap} ${this.r + this.pathGap} 0 0 1 ${this.x + this.r + this.pathGap} ${this.y}`;
+        // Move to the beginning of second arc
+        this.pathString = `${this.pathString} M ${this.x} ${this.y + this.r + this.pathGap}`;
+        // Draw second arc
+        this.pathString = `${this.pathString} A ${this.r + this.pathGap} ${this.r + this.pathGap} 0 0 1 ${this.x - this.r - this.pathGap} ${this.y}`;
     }
 }
 
@@ -58,20 +84,35 @@ class Timeline {
      * This class takes care of rendering and animating timeline.
      */
 
-    constructor() {
-        const svgPoints = document.querySelectorAll("#timeline circle");
+    constructor(radius) {
+        this._init(radius);
+    }
 
+    _init(radius = 0) {
+        const svgLine = document.querySelector('#timeline rect');
+        const svgPoints = document.querySelectorAll('#timeline circle');
+
+        this.x = svgLine.x.baseVal.value;
+        this.y = svgLine.y.baseVal.value;
+        this.r = radius;
+        this.height = svgLine.height.baseVal.value;
+        this.width = svgLine.width.baseVal.value;
         this.points = [];
 
-        svgPoints.forEach(po => {
-            const id = po.getAttribute("id");
+        const inc = this.width / (svgPoints.length + 1);
+        svgPoints.forEach((po, i) => {
+            const id = po.getAttribute('id');
             const pa = document.querySelector(`#${id} + path`)
 
-            this.points.push(new TimelinePoint(po, pa));
+            const x = this.x + inc * (i + 1);
+            const y = this.y + (this.height / 2);
+
+            this.points.push(new TimelinePoint(po, pa, x, y, this.r));
         });
     }
 }
 
-timeline = new Timeline();
-
-console.log(timeline);
+var timeline = new Timeline(15);
+window.addEventListener('resize', () => {
+    timeline._init(15);
+});

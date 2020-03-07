@@ -178,29 +178,11 @@ hr {
     width: 100%;
 }
 
-#timeline rect {
-    x: 40px;
-    y: 40px;
-
-    height: 6px;
-    width: calc(100% - 80px);
-
+#timeline rect, #timeline circle {
     fill: rgba(255, 255, 255, .1);
 }
 
-#timeline circle {
-    cy: 43px;
-
-    r: 15px;
-
-    fill: rgba(255, 255, 255, .1);
-}
-
-#timeline-point-1 {
-    cx: 100px;
-}
-
-#timeline-point-1 + path {
+#timeline path {
     stroke: rgba(255, 255, 255, .1);
     stroke-width: 4px;
     fill: none;
