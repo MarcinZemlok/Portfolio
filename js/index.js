@@ -3,7 +3,7 @@
 //============================================================================//
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.1
+//       Version: 0.2
 //
 //   Description: My portfolio page.
 //
@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 // [04/03/2020]        Marcin Żemlok
         Initial timeline functionality.                                      ///
+--------------------------------------------------------------------------------
+// [09/03/2020]        Marcin Żemlok
+        Basic timeline done.                                                 ///
 //////////////////////////////////////////////////////////////////////////////*/
 ///////////////////////////////////////////////////////////////////////////////
 // SCROLL INDICATOR                                                        ///
@@ -47,12 +50,13 @@ class TimelinePoint {
      * @param {Object} point
      * @param {Object} path
      */
-    constructor(point, path, x, y, r) {
+    constructor(point, path, icon, x, y, r) {
         this.x = x
         this.y = y
         this.r = r
         this.point = point;
         this.path = path;
+        this.icon = icon;
 
         // Point settings
         this.point.setAttribute('cx', this.x);
@@ -63,7 +67,11 @@ class TimelinePoint {
         this.pathGap = 10;
         this.calculatePath();
         this.path.setAttribute('d', this.pathString);
+        this.path.setAttribute('transform-origin', `${x} ${y}`);
 
+        // Icon settings
+        this.icon.style.top = `${this.y}px`;
+        this.icon.style.left = `${this.x}px`;
     }
 
     calculatePath() {
@@ -76,6 +84,14 @@ class TimelinePoint {
         this.pathString = `${this.pathString} M ${this.x} ${this.y + this.r + this.pathGap}`;
         // Draw second arc
         this.pathString = `${this.pathString} A ${this.r + this.pathGap} ${this.r + this.pathGap} 0 0 1 ${this.x - this.r - this.pathGap} ${this.y}`;
+    }
+
+    mouseEnter() {
+        this.icon.classList.add('icon-hover');
+    }
+
+    mouseLeave() {
+        this.icon.classList.remove('icon-hover');
     }
 }
 
@@ -102,17 +118,30 @@ class Timeline {
         const inc = this.width / (svgPoints.length + 1);
         svgPoints.forEach((po, i) => {
             const id = po.getAttribute('id');
+            const data_icon = po.getAttribute('data-icon');
             const pa = document.querySelector(`#${id} + path`)
+            const ico = document.querySelector(`#${data_icon}`)
 
             const x = this.x + inc * (i + 1);
             const y = this.y + (this.height / 2);
 
-            this.points.push(new TimelinePoint(po, pa, x, y, this.r));
+            const tmpTP = new TimelinePoint(po, pa, ico, x, y, this.r);
+
+            po.addEventListener("mouseenter", () => {
+                tmpTP.mouseEnter();
+            });
+            po.addEventListener("mouseleave", () => {
+                tmpTP.mouseLeave();
+            });
+
+            this.points.push(tmpTP);
         });
     }
+
+    // TODO About me cards functionality
 }
 
-var timeline = new Timeline(15);
+var timeline = new Timeline(10);
 window.addEventListener('resize', () => {
-    timeline._init(15);
+    timeline._init(10);
 });

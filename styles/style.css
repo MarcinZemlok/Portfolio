@@ -3,7 +3,7 @@
 //============================================================================//
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.2
+//       Version: 0.3
 //
 //   Description: My portfolio website
 //
@@ -17,6 +17,9 @@
 --------------------------------------------------------------------------------
 // [04/03/2020]        Marcin Żemlok
         Timeline styling draft.                                              ///
+--------------------------------------------------------------------------------
+// [09/03/2020]        Marcin Żemlok
+        Basic timeline done.                                                 ///
 //////////////////////////////////////////////////////////////////////////////*/
 *, *::before, *::after {
     border: none;
@@ -162,28 +165,73 @@ hr {
     text-align: center;
 }
 
-/********************/
-/* TIMELINE SECTION */
-/********************/
+/*****************/
+/* ABOUT SECTION */
+/*****************/
 #about-section {
     height: 100vh;
     margin-right: 0;
     padding: 0;
 
+    position: relative;
+
     background-color: rgba(255, 255, 255, .1);
 }
 
+/* TIMELINE */
 #timeline {
     height: 50%;
     width: 100%;
+
+    position: relative;
+    z-index: 1;
 }
 
 #timeline rect, #timeline circle {
-    fill: rgba(255, 255, 255, .1);
+    fill: rgb(100, 100, 100);
+}
+
+#timeline circle:hover {
+    fill: rgb(225, 225, 225);
+
+    cursor: pointer;
+
+    transition: 1s;
 }
 
 #timeline path {
-    stroke: rgba(255, 255, 255, .1);
-    stroke-width: 4px;
+    stroke: rgba(225, 225, 225, 0);
+    stroke-width: 2px;
     fill: none;
+
+    transition: 1s;
+}
+
+#timeline circle:hover + path {
+    stroke: rgba(225, 225, 225, 1);
+
+    transform: rotate(270deg);
+}
+
+#about-section img {
+    width: 32px;
+    padding: 3px;
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(225, 225, 225, 1);
+    border-radius: 50%;
+
+    opacity: 0;
+
+    z-index: 0;
+
+    transition: 1s;
+}
+
+#about-section img.icon-hover {
+
+    opacity: 1;
+    transform: translate(-50%, 75%);
 }

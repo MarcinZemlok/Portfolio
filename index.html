@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.2
+//       Version: 0.3
 //
 //   Description: My portfolio page.
 //
@@ -17,6 +17,9 @@
 --------------------------------------------------------------------------------
 // [04/03/2020]        Marcin Żemlok
         Timeline draft in ABOUT ME section.                                  ///
+--------------------------------------------------------------------------------
+// [09/03/2020]        Marcin Żemlok
+        Basic timeline done.                                                 ///
 /////////////////////////////////////////////////////////////////////////////-->
 <!DOCTYPE html>
 <html lang="en">
@@ -55,16 +58,22 @@
 
         <div class="section" id="about-section">
             <svg id="timeline">
-                <rect x="10%" y="10%" width="80%" height="6px" />
-                <circle x="0" y="0" id="timeline-point-1" />
+                <rect x="10%" y="10%" width="80%" height="2px" />
+                <circle x="0" y="0" id="timeline-point-1" data-icon="technical-icon" />
                 <path />
-                <circle x="0" y="0" id="timeline-point-2" />
+                <circle x="0" y="0" id="timeline-point-3" data-icon="cpp-icon" />
                 <path />
-                <circle x="0" y="0" id="timeline-point-3" />
+                <circle x="0" y="0" id="timeline-point-2" data-icon="university-icon" />
                 <path />
-                <circle x="0" y="0" id="timeline-point-4" />
+                <circle x="0" y="0" id="timeline-point-4" data-icon="test-icon" />
                 <path />
             </svg>
+            <img src="img/technical-white.png" id="technical-icon" />
+            <img src="img/cpp-white.png" id="cpp-icon" />
+            <img src="img/university-white.png" id="university-icon" />
+            <img src="img/test-white.png" id="test-icon" />
+
+            <!-- TODO About me cards -->
         </div>
 
         <hr>
