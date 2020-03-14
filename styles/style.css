@@ -3,7 +3,7 @@
 //============================================================================//
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.3
+//       Version: 0.5
 //
 //   Description: My portfolio website
 //
@@ -20,14 +20,18 @@
 --------------------------------------------------------------------------------
 // [09/03/2020]        Marcin Żemlok
         Basic timeline done.                                                 ///
+--------------------------------------------------------------------------------
+// [14/03/2020]        Marcin Żemlok
+        * Full timeline done.
+        * About me page done.                                                ///
 //////////////////////////////////////////////////////////////////////////////*/
 *, *::before, *::after {
     border: none;
     margin: 0;
     padding: 0;
 
-    font-family: sans-serif;
     color: rgb(220, 220, 220);
+    font-family: sans-serif;
 }
 
 /*///////////////////////////////////////////////////////////////////////////*/
@@ -57,6 +61,13 @@ body::before {
 /*///////////////////////////////////////////////////////////////////////////*/
 /*/ COMMON                                                                 /*/
 /*/////////////////////////////////////////////////////////////////////////*/
+h1 {
+    font-family: 'Oxanium';
+    font-size: 3rem;
+    letter-spacing: .5rem;
+    text-align: center;
+}
+
 hr {
     margin: 5px 0 5px 150px;
 
@@ -159,12 +170,6 @@ hr {
     align-items: center;
 }
 
-#hello-section h1 {
-    font-family: 'Oxanium';
-    font-size: 3rem;
-    text-align: center;
-}
-
 /*****************/
 /* ABOUT SECTION */
 /*****************/
@@ -174,8 +179,6 @@ hr {
     padding: 0;
 
     position: relative;
-
-    background-color: rgba(255, 255, 255, .1);
 }
 
 /* TIMELINE */
@@ -184,14 +187,14 @@ hr {
     width: 100%;
 
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 #timeline rect, #timeline circle {
-    fill: rgb(100, 100, 100);
+    fill: rgb(130, 130, 130);
 }
 
-#timeline circle:hover {
+#timeline circle.timeline-circle-active {
     fill: rgb(225, 225, 225);
 
     cursor: pointer;
@@ -207,7 +210,7 @@ hr {
     transition: 1s;
 }
 
-#timeline circle:hover + path {
+#timeline circle.timeline-circle-active + path {
     stroke: rgba(225, 225, 225, 1);
 
     transform: rotate(270deg);
@@ -225,13 +228,66 @@ hr {
 
     opacity: 0;
 
-    z-index: 0;
+    z-index: 1;
 
     transition: 1s;
 }
 
-#about-section img.icon-hover {
+#about-section img.icon-active {
 
     opacity: 1;
     transform: translate(-50%, 75%);
+}
+
+/* CARDS */
+.about-me-card {
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-size: cover;
+    opacity: 0;
+
+    transition: opacity 1s;
+
+}
+
+.about-me-card > div {
+    min-width: 60%;
+    padding: 40px 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 1);
+}
+
+.about-me-card p {
+    text-indent: 1rem;
+}
+
+.about-me-card-visible {
+    opacity: 1;
+}
+
+#technical-card{
+    background-image: url('../img/zeg.jpg');
+}
+
+#cpp-card{
+    background-image: url('../img/microcontrolers.jpeg');
+}
+
+#university-card{
+    background-image: url('../img/polsl.jpeg');
+}
+
+#test-card{
+    background-image: url('../img/aptiv.jpeg');
 }

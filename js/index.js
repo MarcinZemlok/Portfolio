@@ -3,7 +3,7 @@
 //============================================================================//
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.2
+//       Version: 0.3
 //
 //   Description: My portfolio page.
 //
@@ -18,6 +18,9 @@
 --------------------------------------------------------------------------------
 // [09/03/2020]        Marcin Żemlok
         Basic timeline done.                                                 ///
+--------------------------------------------------------------------------------
+// [14/03/2020]        Marcin Żemlok
+        Full timeline functionality done.                                    ///
 //////////////////////////////////////////////////////////////////////////////*/
 ///////////////////////////////////////////////////////////////////////////////
 // SCROLL INDICATOR                                                        ///
@@ -50,13 +53,14 @@ class TimelinePoint {
      * @param {Object} point
      * @param {Object} path
      */
-    constructor(point, path, icon, x, y, r) {
+    constructor(point, path, icon, card, x, y, r) {
         this.x = x
         this.y = y
         this.r = r
         this.point = point;
         this.path = path;
         this.icon = icon;
+        this.card = card;
 
         // Point settings
         this.point.setAttribute('cx', this.x);
@@ -86,12 +90,20 @@ class TimelinePoint {
         this.pathString = `${this.pathString} A ${this.r + this.pathGap} ${this.r + this.pathGap} 0 0 1 ${this.x - this.r - this.pathGap} ${this.y}`;
     }
 
-    mouseEnter() {
-        this.icon.classList.add('icon-hover');
+    hideCard() {
+        this.point.classList.remove('timeline-circle-active')
+        this.card.classList.remove('about-me-card-visible');
+        this.icon.classList.remove('icon-active');
     }
 
-    mouseLeave() {
-        this.icon.classList.remove('icon-hover');
+    activate() {
+        this.point.classList.add('timeline-circle-active')
+        this.icon.classList.add('icon-active');
+    }
+
+    mouseEnter() {
+        this.activate();
+        this.card.classList.add('about-me-card-visible');
     }
 }
 
@@ -119,19 +131,23 @@ class Timeline {
         svgPoints.forEach((po, i) => {
             const id = po.getAttribute('id');
             const data_icon = po.getAttribute('data-icon');
+            const data_card = po.getAttribute('data-card');
             const pa = document.querySelector(`#${id} + path`)
             const ico = document.querySelector(`#${data_icon}`)
+            const card = document.querySelector(`#${data_card}`)
 
             const x = this.x + inc * (i + 1);
             const y = this.y + (this.height / 2);
 
-            const tmpTP = new TimelinePoint(po, pa, ico, x, y, this.r);
+            const tmpTP = new TimelinePoint(po, pa, ico, card, x, y, this.r);
+
+            if (i == 0) setTimeout(() => { tmpTP.activate(); }, 1000);
 
             po.addEventListener("mouseenter", () => {
+                this.points.forEach((p) => {
+                    p.hideCard()
+                });
                 tmpTP.mouseEnter();
-            });
-            po.addEventListener("mouseleave", () => {
-                tmpTP.mouseLeave();
             });
 
             this.points.push(tmpTP);
