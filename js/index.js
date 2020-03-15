@@ -21,6 +21,9 @@
 --------------------------------------------------------------------------------
 // [14/03/2020]        Marcin Żemlok
         Full timeline functionality done.                                    ///
+--------------------------------------------------------------------------------
+// [15/03/2020]        Marcin Żemlok
+        Switched scroll indicator to horizontal.                             ///
 //////////////////////////////////////////////////////////////////////////////*/
 ///////////////////////////////////////////////////////////////////////////////
 // SCROLL INDICATOR                                                        ///
@@ -37,8 +40,8 @@ function scrollIndicator() {
         window.visualViewport.height);
 
     this.indicateScroll = () => {
-        const scroll = window.scrollY / this.windowHeight * 80;
-        document.querySelector("#nav-progres").style.height = `${scroll}%`
+        const scroll = window.scrollY / this.windowHeight * 100;
+        document.querySelector("#nav-progres").style.width = `${scroll}%`
     };
 
     window.onscroll = this.indicateScroll;
