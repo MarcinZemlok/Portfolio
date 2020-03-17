@@ -3,7 +3,7 @@
 //============================================================================//
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.5
+//       Version: 0.6
 //
 //   Description: My portfolio website
 //
@@ -28,6 +28,9 @@
 // [15/03/2020]        Marcin Żemlok
         * Moved navbar to the top.
         * Skills section styling.                                            ///
+--------------------------------------------------------------------------------
+// [17/03/2020]        Marcin Żemlok
+        Footer section.                                                      ///
 //////////////////////////////////////////////////////////////////////////////*/
 *, *::before, *::after {
     border: none;
@@ -125,7 +128,7 @@ hr {
     y: 0;
 
     height: 100%;
-    width: 50%;
+    width: 0%;
 
     fill: #bada55;
 }
@@ -325,27 +328,29 @@ hr {
     transition: box-shadow 0.5s;
 }
 
+#skills-section > h1 {
+    width: 100%;
+}
+
 .skill-card:hover {
     box-shadow: 0 2px 4px 0 rgba(255, 255, 255, .5);
 }
 
-.skill-card:nth-child(even) img {
-    width: 100px;
-
+.skill-card:nth-child(odd) img {
     float: left;
 
     margin-right: 10px;
 }
 
-.skill-card:nth-child(odd) img {
-    width: 100px;
-
+.skill-card:nth-child(even) img {
     float: right;
 
     margin-left: 10px;
 }
 
 .skill-card img {
+    width: 100px;
+
     filter: grayscale();
 
     transition: filter 0.5s;
@@ -353,4 +358,40 @@ hr {
 
 .skill-card:hover img {
     filter: none;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*/ FOOTER                                                                  /*/
+/*//////////////////////////////////////////////////////////////////////////*/
+footer {
+    padding: 30px 0;
+
+    align-content: space-around;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    background-color: black;
+}
+
+footer div{
+    text-align: center;
+}
+
+footer div img {
+    width: 32px;
+}
+
+footer div + div{
+    margin-top: 30px;
+}
+
+footer div:first-child {
+    display: inherit;
+    justify-content: space-around;
+}
+
+footer div:last-child {
+    font-size: .7rem;
 }
