@@ -87,7 +87,7 @@ hr {
 }
 
 /*///////////////////////////////////////////////////////////////////////////*/
-/*/ NAVIGATINO                                                             /*/
+/*/ NAVIGATION                                                             /*/
 /*/////////////////////////////////////////////////////////////////////////*/
 #navigation {
     width: 100vw;
@@ -108,14 +108,14 @@ hr {
     top: 0;
     left: 0;
 
-    height: 5px;
+    height: 1px;
     width: 100%;
 
     background-color: rgb(100, 100, 100);
 }
 
 #navigation svg {
-    height: 5px;
+    height: 1px;
     width: 100%;
 
     position: absolute;
