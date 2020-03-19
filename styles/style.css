@@ -3,7 +3,7 @@
 //============================================================================//
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.6
+//       Version: 0.7
 //
 //   Description: My portfolio website
 //
@@ -31,6 +31,10 @@
 --------------------------------------------------------------------------------
 // [17/03/2020]        Marcin Żemlok
         Footer section.                                                      ///
+--------------------------------------------------------------------------------
+// [19/03/2020]        Marcin Żemlok
+        * Skills section done for now.
+        * My work section draft.                                             ///
 //////////////////////////////////////////////////////////////////////////////*/
 *, *::before, *::after {
     border: none;
@@ -310,7 +314,7 @@ hr {
 /******************/
 /* SKILLS SECTION */
 /******************/
-#skills-section {
+#skills-section, #work-section {
     max-width: 100vw;
 
     display: flex;
@@ -340,12 +344,16 @@ hr {
     float: left;
 
     margin-right: 10px;
+
+    border-right: 2px solid black;
 }
 
 .skill-card:nth-child(even) img {
     float: right;
 
     margin-left: 10px;
+
+    border-left: 2px solid black;
 }
 
 .skill-card img {
@@ -358,6 +366,84 @@ hr {
 
 .skill-card:hover img {
     filter: none;
+}
+
+/****************/
+/* WORK SECTION */
+/****************/
+/* SKILL CARDS */
+.work-card {
+    width: 80%;
+    padding: 20px;
+
+    position: relative;
+
+    transition: box-shadow 0.5s;
+}
+
+.work-card p {
+    margin-top: 10px;
+}
+
+.work-card:nth-child(odd) * {
+    text-align: right;
+}
+
+.work-card img {
+    width: 200px;
+
+    transition: filter 0.5s;
+}
+
+.work-card:nth-child(odd) img {
+    float: left;
+
+    margin-right: 10px;
+
+    border-right: 2px solid black;
+}
+
+.work-card:nth-child(even) img {
+    float: right;
+
+    margin-left: 10px;
+
+    border-left: 2px solid black;
+}
+
+.work-card .links {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+
+    display: flex;
+    align-items: stretch;
+}
+
+.work-card:nth-child(odd) .links {
+    right: 20px;
+
+    justify-content: flex-end;
+}
+
+.work-card .links a {
+    display: flex;
+    align-items: center;
+}
+
+.work-card .links a + a {
+    margin-left: 10px;
+    padding-left: 10px;
+
+    border-left: 1px solid black;
+}
+
+.work-card .links a img {
+    width: 32px;
+
+    margin: 0;
+
+    border: none;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
