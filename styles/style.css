@@ -3,7 +3,7 @@
 //============================================================================//
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.7
+//       Version: 0.8
 //
 //   Description: My portfolio website
 //
@@ -35,27 +35,42 @@
 // [19/03/2020]        Marcin Żemlok
         * Skills section done for now.
         * My work section draft.                                             ///
+--------------------------------------------------------------------------------
+// [13/04/2020]        Marcin Żemlok
+        Theme change.                                                        ///
 //////////////////////////////////////////////////////////////////////////////*/
 *, *::before, *::after {
     border: none;
     margin: 0;
     padding: 0;
 
-    color: rgb(220, 220, 220);
+    color: rgb(16, 0, 109);
     font-family: sans-serif;
 }
 
 /*///////////////////////////////////////////////////////////////////////////*/
 /*/ GENERAL                                                                /*/
 /*/////////////////////////////////////////////////////////////////////////*/
-body {
-    background-image: url(../img/steel-backgrould.jpg);
-    background-repeat: repeat-y;
-    background-size: cover;
-    background-attachment: fixed;
+html {
+    overflow: hidden;
 }
 
-body::before {
+body {
+    /* background-image: url(../img/steel-backgrould.jpg);
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-attachment: fixed; */
+    background-color: aliceblue;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100vh;
+    /* scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh); */
+    scroll-snap-type: y mandatory;
+}
+
+/* body::before {
     height: 100vh;
     width: 100vw;
 
@@ -67,7 +82,7 @@ body::before {
     background-color: rgba(0, 0, 0, 0.6);
 
     z-index: -1;
-}
+} */
 
 /*///////////////////////////////////////////////////////////////////////////*/
 /*/ COMMON                                                                 /*/
@@ -178,7 +193,9 @@ hr {
 .section {
     height: 100vh;
 
-    padding: 0 10%;
+    scroll-snap-align: start;
+
+    /* padding: 0 10%; */
 }
 
 /*****************/
@@ -188,6 +205,43 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#main-header {
+    padding: 20px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+}
+
+#main-header h1 {
+    max-width: 50%;
+
+    text-align: left;
+}
+
+#crop-profile-photo {
+    height: 350px;
+    width: 210px;
+
+    margin-right: 5%;
+
+    overflow: hidden;
+
+    border-radius: 3px;
+}
+
+#crop-profile-photo img {
+    width: 300px;
+
+    margin-top: -70px;
+    margin-left: -50px;
+
+    filter: grayscale(40%);
 }
 
 /*****************/
@@ -201,12 +255,37 @@ hr {
 }
 
 /* TIMELINE */
-#timeline {
+/* #timeline {
     height: 50%;
     width: 100%;
 
     position: relative;
     z-index: 2;
+} */
+#timeline {
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    /* border: 1px solid; */
+}
+
+.timeline-point a {
+    height: 50px;
+    width: 50px;
+
+    display: block;
+
+    background-color: rgba(0, 0, 0, 0.329);
+
+    border-radius: 0 25px 25px 0;
 }
 
 #timeline rect, #timeline circle {
@@ -268,10 +347,16 @@ hr {
     left: 0;
 
     background-size: cover;
+    background-color: aliceblue;
+    background-blend-mode: screen;
     opacity: 0;
 
     transition: opacity 0.5s;
 
+}
+
+.about-me-card:target {
+    opacity: 1;
 }
 
 .about-me-card > div {
@@ -283,8 +368,9 @@ hr {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 1);
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    background-color: none;
+    box-shadow: 0 1px 5px 0 rgba(100, 100, 100, 1);
 }
 
 .about-me-card p {
@@ -337,7 +423,7 @@ hr {
 }
 
 .skill-card:hover {
-    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, .5);
+    box-shadow: 0 1px 5px 0 rgba(100, 100, 100, 1);
 }
 
 .skill-card:nth-child(odd) img {
@@ -371,6 +457,9 @@ hr {
 /****************/
 /* WORK SECTION */
 /****************/
+#work-section {
+    flex-direction: column;
+}
 /* SKILL CARDS */
 .work-card {
     width: 80%;
@@ -457,6 +546,7 @@ footer {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
+    scroll-snap-align: end;
 
     background-color: black;
 }
