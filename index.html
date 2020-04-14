@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.8
+//       Version: 0.9
 //
 //   Description: My portfolio page.
 //
@@ -38,6 +38,9 @@
 --------------------------------------------------------------------------------
 // [13/04/2020]        Marcin Żemlok
         Theme change.                                                        ///
+--------------------------------------------------------------------------------
+// [14/04/2020]        Marcin Żemlok
+        Added contact form.                                                  ///
 /////////////////////////////////////////////////////////////////////////////-->
 <!DOCTYPE html>
 <html lang="en">
@@ -492,10 +495,25 @@
         </div>
 
         <div class="section" id="contact-section">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed odio facilisis, aliquet massa sed, lacinia
-            nisi. Maecenas arcu velit, fringilla at ipsum nec, consectetur suscipit nunc. Quisque maximus convallis
-            efficitur. Phasellus ut metus porttitor, sodales lacus eget, dignissim tellus. In hac habitasse platea
-            dictumst. Proin a tincidunt mauris. Proin quis efficitur lacus.
+            <form action="mailto:marcinzemlok@gmail.com?subject=Probably job offer :)"
+                method="post"
+                enctype="text/plain">
+                <div>
+                    <textarea name="mail-content"
+                        cols="80"
+                        rows="20"
+                        placeholder="Your message..."></textarea>
+                </div>
+                <div>
+                    <input type="name" name="name"
+                        placeholder="Your name"><br>
+                    <input type="email" name="email"
+                        placeholder="Your e-mail address"><br>
+                    <input type="tel" name="phone"
+                        placeholder="Your phone number"><br>
+                    <input type="submit" value="SEND">
+                </div>
+            </form>
         </div>
 
         <footer>
