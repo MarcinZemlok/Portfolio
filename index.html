@@ -3,44 +3,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.9
+//       Version: 0.9.5
 //
 //   Description: My portfolio page.
 //
 // Creation date: 29/02/2020
 ================================== CHANGE LOG ==================================
-// [29/02/2020]        Marcin Żemlok
-        Work start.                                                          ///
---------------------------------------------------------------------------------
-// [01/03/2020]        Marcin Żemlok
-        Established navigation concept.                                      ///
---------------------------------------------------------------------------------
-// [04/03/2020]        Marcin Żemlok
-        Timeline draft in ABOUT ME section.                                  ///
---------------------------------------------------------------------------------
-// [09/03/2020]        Marcin Żemlok
-        Basic timeline done.                                                 ///
---------------------------------------------------------------------------------
-// [14/03/2020]        Marcin Żemlok
-        * Timeline done.
-        * About me section done.                                             ///
---------------------------------------------------------------------------------
-// [15/03/2020]        Marcin Żemlok
-        * Moved navbar to the top.
-        * Skills section, basic content.                                     ///
---------------------------------------------------------------------------------
-// [17/03/2020]        Marcin Żemlok
-        Footer section.                                                      ///
---------------------------------------------------------------------------------
-// [19/03/2020]        Marcin Żemlok
-        * Skills section done for now.
-        * My work section draft.                                             ///
---------------------------------------------------------------------------------
-// [13/04/2020]        Marcin Żemlok
-        Theme change.                                                        ///
---------------------------------------------------------------------------------
-// [14/04/2020]        Marcin Żemlok
-        Added contact form.                                                  ///
+
 /////////////////////////////////////////////////////////////////////////////-->
 <!DOCTYPE html>
 <html lang="en">
@@ -494,55 +463,53 @@
             </div>
         </div>
 
-        <div class="section" id="contact-section">
+        <div id="contact-section">
             <form action="mailto:marcinzemlok@gmail.com?subject=Probably job offer :)"
                 method="post"
                 enctype="text/plain">
-                <div>
                     <textarea name="mail-content"
-                        cols="80"
+                        cols="40"
                         rows="20"
                         placeholder="Your message..."></textarea>
+                    <div>
+                        <input type="name" name="name"
+                            placeholder="Your name"><br>
+                        <!-- <input type="email" name="email"
+                            placeholder="Your e-mail address"><br> -->
+                        <input type="tel" name="phone"
+                            placeholder="Your phone number"><br>
+                        <input type="submit" value="SEND">
+                    </div>
+            </form>
+
+            <footer>
+                <div>
+                    E-mail: <a href="mailto:marcinzemlok@gmail.com">
+                        marcinzemlok@gmail.com
+                    </a><br>
+                    Phone: <a href="tel:+48510481973">
+                        +48510481973
+                    </a>
                 </div>
                 <div>
-                    <input type="name" name="name"
-                        placeholder="Your name"><br>
-                    <input type="email" name="email"
-                        placeholder="Your e-mail address"><br>
-                    <input type="tel" name="phone"
-                        placeholder="Your phone number"><br>
-                    <input type="submit" value="SEND">
+                    <div>
+                        <a href="https://www.facebook.com/mzemlok">
+                            <img src="./img/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://github.com/MarcinZemlok">
+                            <img src="./img/github.png" alt="GitHub">
+                        </a>
+                        <a href="https://www.linkedin.com/in/marcin-%C5%BCemlok-a70039151/">
+                            <img src="./img/linkedin.png" alt="Linkedin">
+                        </a>
+                    </div>
+                    This work is licensed under a
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                        Creative Commons Attribution-ShareAlike 4.0 International License
+                    </a>.
                 </div>
-            </form>
+            </footer>
         </div>
-
-        <footer>
-            <div>
-                <a href="https://www.facebook.com/mzemlok">
-                    <img src="./img/facebook.png" alt="Facebook">
-                </a>
-                <a href="https://github.com/MarcinZemlok">
-                    <img src="./img/github.png" alt="GitHub">
-                </a>
-                <a href="https://www.linkedin.com/in/marcin-%C5%BCemlok-a70039151/">
-                    <img src="./img/linkedin.png" alt="Linkedin">
-                </a>
-            </div>
-            <div>
-                E-mail: <a href="mailto:marcinzemlok@gmail.com">
-                    marcinzemlok@gmail.com
-                </a><br>
-                Phone: <a href="tel:+48510481973">
-                    +48510481973
-                </a>
-            </div>
-            <div>
-                This work is licensed under a
-                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-                    Creative Commons Attribution-ShareAlike 4.0 International License
-                </a>.
-            </div>
-        </footer>
 
         <script src="js/index.js"></script>
     </body>

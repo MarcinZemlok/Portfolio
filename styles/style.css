@@ -3,41 +3,13 @@
 //============================================================================//
 //        Author: Marcin Żemlok
 //         Email: marcinzemlok@gmail.com
-//       Version: 0.8
+//       Version: 0.9
 //
 //   Description: My portfolio website
 //
 // Creation date: 29/02/2020
 ================================= CHANGE LOG ===================================
-// [29/02/2020]        Marcin Żemlok
-        Initial draft.                                                       ///
---------------------------------------------------------------------------------
-// [01/03/2020]        Marcin Żemlok
-        Established navigation concept.                                      ///
---------------------------------------------------------------------------------
-// [04/03/2020]        Marcin Żemlok
-        Timeline styling draft.                                              ///
---------------------------------------------------------------------------------
-// [09/03/2020]        Marcin Żemlok
-        Basic timeline done.                                                 ///
---------------------------------------------------------------------------------
-// [14/03/2020]        Marcin Żemlok
-        * Full timeline done.
-        * About me page done.                                                ///
---------------------------------------------------------------------------------
-// [15/03/2020]        Marcin Żemlok
-        * Moved navbar to the top.
-        * Skills section styling.                                            ///
---------------------------------------------------------------------------------
-// [17/03/2020]        Marcin Żemlok
-        Footer section.                                                      ///
---------------------------------------------------------------------------------
-// [19/03/2020]        Marcin Żemlok
-        * Skills section done for now.
-        * My work section draft.                                             ///
---------------------------------------------------------------------------------
-// [13/04/2020]        Marcin Żemlok
-        Theme change.                                                        ///
+
 //////////////////////////////////////////////////////////////////////////////*/
 *, *::before, *::after {
     border: none;
@@ -67,7 +39,7 @@ body {
     height: 100vh;
     /* scroll-snap-type: mandatory;
     scroll-snap-points-y: repeat(100vh); */
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
 }
 
 /* body::before {
@@ -460,6 +432,7 @@ hr {
 #work-section {
     flex-direction: column;
 }
+
 /* SKILL CARDS */
 .work-card {
     width: 80%;
@@ -538,11 +511,25 @@ hr {
 /*////////////////////////////////////////////////////////////////////////////*/
 /*/ CONTACT                                                                 /*/
 /*//////////////////////////////////////////////////////////////////////////*/
+
+#contact-section {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: flex-end;
+
+    scroll-snap-align: end;
+}
+
 #contact-section form {
-    height: 100%;
-    width: 100%;
+    /* height: 100%; */
+    max-width: 100%;
+
+    margin: 50px 0;
+
+    flex: 1;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -551,26 +538,38 @@ hr {
     color: black;
 }
 
+#contact-section form *:focus {
+    outline: none;
+}
+
 #contact-section form textarea {
-    margin-right: 20px;
+    /* margin-right: 20px; */
+    /* margin-bottom: -4px; */
     padding: 10px;
 
     resize: none;
 
     font-size: 0.9rem;
 
-    box-shadow: 0 1px 5px 0 rgba(100, 100, 100, 1);
+    /* box-shadow: 0 1px 5px 0 rgba(100, 100, 100, 1); */
+}
+
+#contact-section form div {
+    width: 355px;
 }
 
 #contact-section form input {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
+    box-sizing: border-box;
+
+    width: 100%;
     padding: 5px;
 
     resize: none;
 
     font-size: 1rem;
 
-    box-shadow: 0 1px 5px 0 rgba(100, 100, 100, 1);
+    /* box-shadow: 0 1px 5px 0 rgba(100, 100, 100, 1); */
 }
 
 #contact-section form input[type="submit"] {
@@ -588,16 +587,19 @@ hr {
 /*/ FOOTER                                                                  /*/
 /*//////////////////////////////////////////////////////////////////////////*/
 footer {
-    padding: 30px 0;
+    max-width: 30%;
+
+    padding: 30px 20px;
 
     align-content: space-around;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
-    scroll-snap-align: end;
+    justify-content: flex-end;
 
-    background-color: black;
+    border-left: 1px solid black;
+
+    /* background-color: black; */
 }
 
 footer div{
@@ -608,13 +610,12 @@ footer div img {
     width: 32px;
 }
 
-footer div + div{
-    margin-top: 30px;
+footer div div a + a {
+    margin-left: 10px;
 }
 
 footer div:first-child {
-    display: inherit;
-    justify-content: space-around;
+    flex: 1;
 }
 
 footer div:last-child {
