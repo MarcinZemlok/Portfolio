@@ -1,16 +1,3 @@
-<!--////////////////////////////////////////////////////////////////////////////
-///                                PORTFOLIO                                 ///
-////////////////////////////////////////////////////////////////////////////////
-//        Author: Marcin Żemlok
-//         Email: marcinzemlok@gmail.com
-//       Version: 0.9.5
-//
-//   Description: My portfolio page.
-//
-// Creation date: 29/02/2020
-================================== CHANGE LOG ==================================
-
-/////////////////////////////////////////////////////////////////////////////-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- FONTS -->
-        <link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap" rel="stylesheet">
 
         <!-- CSS -->
         <link rel="stylesheet" href="styles/style.css">
@@ -27,481 +15,44 @@
     </head>
 
     <body>
-        <!-- <nav id="navigation">
-            <svg>
-                <rect id="nav-progres" />
-            </svg>
-            <div id="nav-buttons">
-                <div class="nav-button">HOME</div>
-                <div class="nav-button">ABOUT ME</div>
-                <div class="nav-button">SKILLS</div>
-                <div class="nav-button">CONTACT</div>
-            </div>
-        </nav> -->
-
-        <!-- <div class="section" id="hello-section">
-            <h1>Hello, I am <span class="green-text">Marcin</span>, I love to design and build websites and web
-                applications ;)</h1>
-        </div> -->
-
-        <div class="section" id="hello-section">
-            <div id="main-header">
-                <div id="crop-profile-photo">
-                    <img src="img/my-profile-photo.png">
+        <menu>
+            <hr/>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#">SKILLS</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </menu>
+        <section>
+            <div id="hello-section" class="bulls-eye-position">
+                <h1>MARCIN ŻEMLOK</h1>
+                <p>Hello! I am Marcin, a software developer working from Poland.
+                    I am working in software development and testing for one of
+                    the biggest OEMs in automotive industry. My goal is to step out
+                    from that world and step into web development.</p>
+                <p>I am dedicated individual focused on getting the job done. I
+                    have very good skills in exploring areas that are beyond my
+                    field of expertise. I feel very good working in a team among
+                    skilled people I can learn from and also share my experience
+                    with those less skilled. I like to take initiative and propose
+                    upgrades and solutions to existing and potential problems.</p>
+                <div class="standard-round-image-container">
+                    <img class="standard-round-image" src="./img/CV.jpg" alt="Profile image">
                 </div>
-                <h1>
-                    Hi, I am<br><span class="green-text">Marcin</span><br>
-                    let me build a web application for You.
-                </h1>
+                <div id="social-icons">
+                    <a href="#"><img src="./img/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="./img/github.png" alt="GIT"></a>
+                    <a href="#"><img src="./img/linkedin.png" alt="LinkedIN"></a>
+                </div>
             </div>
+        </section>
+        <div id="background">
+            <div id="background-light"></div>
+            <div id="background-overlay"></div>
         </div>
-
-        <!-- <div class="section" id="about-section">
-            <svg id="timeline">
-                <rect x="10%" y="10%" width="80%" height="2px" />
-                <circle x="0" y="0" id="timeline-point-1" data-icon="default-icon" data-card="default-card" />
-                <path />
-                <circle x="0" y="0" id="timeline-point-2" data-icon="technical-icon" data-card="technical-card" />
-                <path />
-                <circle x="0" y="0" id="timeline-point-4" data-icon="university-icon" data-card="university-card" />
-                <path />
-                <circle x="0" y="0" id="timeline-point-5" data-icon="test-icon" data-card="test-card" />
-                <path />
-            </svg>
-            <img src="" id="default-icon" style="display: none;" />
-            <img src="img/technical-white.png" id="technical-icon" />
-            <img src="img/university-white.png" id="university-icon" />
-            <img src="img/test-white.png" id="test-icon" />
-
-            <div class="about-me-card about-me-card-visible" id="default-card">
-                <div style="box-shadow: none; background-color: rgba(0, 0, 0, 0);">
-                    <h1>
-                        ABOUT <span class="green-text">ME</span>
-                    </h1>
-                    <p>
-                        I have always loved programming. As a kid I was really into technical stuff, tearing apart all
-                        electronics toys and trying to rebuild them (99% of the time with no success).
-                    </p>
-                    <br>
-                    <p>
-                        This passion led me to technical shool in my city where I was learning to become electronics
-                        technician. In that time, having around 17 years old, I began my first experiments with
-                        programming.
-                    </p>
-                    <br>
-                    <p>
-                        My journey with code started from learning C++, using whatever I could find on the internet.
-                        Than my hunger of knowledge forced me to learn other languages.
-                    </p>
-                    <br>
-                    <p>
-                        For five years I have been studying electronics and computer science on the Silesian University
-                        of Technology. That was the time when I gained a lot of knowledge and also met my wife.
-                    </p>
-                    <br>
-                    <p>
-                        Today I am working for international company in automotive industry as an software tester.
-                        Working with code is my daily basis such as making my life easier by automating as much of my
-                        work as possible.
-                    </p>
-                    <br>
-                    <p>
-                        If you want to know more about me feel free to hover other dots on my timeline.
-                    </p>
-                </div>
-            </div>
-            <div class="about-me-card" id="technical-card">
-                <div>
-                    <h2>
-                        Technical shool <span class="green-text">(2010 - 2014)</span>
-                    </h2>
-                    <br>
-                    <p>
-                        After finishing primary education I decided to learn electronics. There was a technical shool in
-                        my city which offered just that. For four years I have been learning about flow of the current,
-                        electronics elements, circuits and semiconductors. But even if I really liked electronics
-                        something
-                        started to pull me to programing.
-                    </p>
-                    <br>
-                    <p>
-                        So I began to learn programming on my own. I started from C++ since that was more tempting
-                        programming language I knew except of ASSEMBLER. And so, as always when you are beginning
-                        something new I struggled a lot to force my very simple programs to work. I gave up idea of
-                        becoming programmer and 6 moths later started to learn again, with more humility. And than it
-                        clicked.
-                    </p>
-                    <br>
-                    <p>
-                        Another big moment in my coding life was when I discovered micro controllers programming.
-                        Finally I
-                        could bring my code to physical world. And so I started to create fairly simple circuits with
-                        some buttons, displays and motors to see what this little blocks are capable of.
-                    </p>
-                </div>
-            </div>
-            <div class="about-me-card" id="university-card">
-                <div>
-                    <h2>
-                        Silesian University of Technology <span class="green-text">(2014 - 2019)</span>
-                    </h2>
-                    <br>
-                    <p>
-                        For my primary field of study I have chosen electronics and telecommunication. Mostly because I
-                        had experience in tis field and because all my best friends chose it.
-                    </p>
-                    <br>
-                    <p>
-                        This studies included some coding lessons so I was specially exited with those. Nonetheless most
-                        of
-                        the time I was spending calculating circuits again. And so, on the second year I have joined
-                        science club.
-                    </p>
-                    <br>
-                    <p>
-                        That was the place where I could combine my knowledge of electronics and passion for programming
-                        by building robots. Two or three times a year we were taking part in competition (classical
-                        robo-sumo). We never won, but it was great fun.
-                    </p>
-                    <br>
-                    <p>
-                        For my master studies I have finally chosen computer science with specialty of internet and
-                        network technologies. I finally studied about algorithms, AI, databases and so on. And that was
-                        the time when I have decided to work to become a web developer.
-                    </p>
-                </div>
-            </div>
-            <div class="about-me-card" id="test-card">
-                <div>
-                    <h2>
-                        Aptiv Services Poland <span class="green-text">(2017 - now)</span>
-                    </h2>
-                    <br>
-                    <p>
-                        During studying electronics I started intern in international automotive company. This intern
-                        last for almost 2 years (until I finished study). That was the time of gaining a ton of
-                        experience in work, programming, problem solving and code development. It forced me to learn new
-                        languages, tools and methodologies but also teamwork.
-                    </p>
-                    <br>
-                    <p>
-                        After two years of intern I got a job as an software tester. It is very challenging work which
-                        requires huge programming knowledge, huge knowledge of the system under test and great attention
-                        to details.
-                    </p>
-                    <br>
-                    <p>
-                        Still, even if this work gives me a lot of satisfaction I don't feel it to be my final shore.
-                        And so I am spending my free time to work my way up to become web developer.
-                    </p>
-                </div>
-            </div>
-        </div> -->
-
-        <div class="section" id="about-section">
-
-            <div id="timeline">
-                <div class="timeline-point">
-                    <a href="#default-card"></a>
-                </div>
-                <div class="timeline-point">
-                    <a href="#technical-card"></a>
-                </div>
-                <div class="timeline-point">
-                    <a href="#university-card"></a>
-                </div>
-                <div class="timeline-point">
-                    <a href="#test-card"></a>
-                </div>
-            </div>
-
-            <div class="about-me-card" id="technical-card">
-                <div>
-                    <h2>
-                        Technical shool <span class="green-text">(2010 - 2014)</span>
-                    </h2>
-                    <br>
-                    <p>
-                        After finishing primary education I decided to learn electronics. There was a technical shool in
-                        my city which offered just that. For four years I have been learning about flow of the current,
-                        electronics elements, circuits and semiconductors. But even if I really liked electronics
-                        something
-                        started to pull me to programing.
-                    </p>
-                    <br>
-                    <p>
-                        So I began to learn programming on my own. I started from C++ since that was more tempting
-                        programming language I knew except of ASSEMBLER. And so, as always when you are beginning
-                        something new I struggled a lot to force my very simple programs to work. I gave up idea of
-                        becoming programmer and 6 moths later started to learn again, with more humility. And than it
-                        clicked.
-                    </p>
-                    <br>
-                    <p>
-                        Another big moment in my coding life was when I discovered micro controllers programming.
-                        Finally I
-                        could bring my code to physical world. And so I started to create fairly simple circuits with
-                        some buttons, displays and motors to see what this little blocks are capable of.
-                    </p>
-                </div>
-            </div>
-            <div class="about-me-card" id="university-card">
-                <div>
-                    <h2>
-                        Silesian University of Technology <span class="green-text">(2014 - 2019)</span>
-                    </h2>
-                    <br>
-                    <p>
-                        For my primary field of study I have chosen electronics and telecommunication. Mostly because I
-                        had experience in tis field and because all my best friends chose it.
-                    </p>
-                    <br>
-                    <p>
-                        This studies included some coding lessons so I was specially exited with those. Nonetheless most
-                        of
-                        the time I was spending calculating circuits again. And so, on the second year I have joined
-                        science club.
-                    </p>
-                    <br>
-                    <p>
-                        That was the place where I could combine my knowledge of electronics and passion for programming
-                        by building robots. Two or three times a year we were taking part in competition (classical
-                        robo-sumo). We never won, but it was great fun.
-                    </p>
-                    <br>
-                    <p>
-                        For my master studies I have finally chosen computer science with specialty of internet and
-                        network technologies. I finally studied about algorithms, AI, databases and so on. And that was
-                        the time when I have decided to work to become a web developer.
-                    </p>
-                </div>
-            </div>
-            <div class="about-me-card" id="test-card">
-                <div>
-                    <h2>
-                        Aptiv Services Poland <span class="green-text">(2017 - now)</span>
-                    </h2>
-                    <br>
-                    <p>
-                        During studying electronics I started intern in international automotive company. This intern
-                        last for almost 2 years (until I finished study). That was the time of gaining a ton of
-                        experience in work, programming, problem solving and code development. It forced me to learn new
-                        languages, tools and methodologies but also teamwork.
-                    </p>
-                    <br>
-                    <p>
-                        After two years of intern I got a job as an software tester. It is very challenging work which
-                        requires huge programming knowledge, huge knowledge of the system under test and great attention
-                        to details.
-                    </p>
-                    <br>
-                    <p>
-                        Still, even if this work gives me a lot of satisfaction I don't feel it to be my final shore.
-                        And so I am spending my free time to work my way up to become web developer.
-                    </p>
-                </div>
-            </div>
-            <div class="about-me-card" id="default-card">
-                <div style="box-shadow: none; background-color: rgba(0, 0, 0, 0);">
-                    <h1>
-                        ABOUT <span class="green-text">ME</span>
-                    </h1>
-                    <p>
-                        I have always loved programming. As a kid I was really into technical stuff, tearing apart all
-                        electronics toys and trying to rebuild them (99% of the time with no success).
-                    </p>
-                    <br>
-                    <p>
-                        This passion led me to technical shool in my city where I was learning to become electronics
-                        technician. In that time, having around 17 years old, I began my first experiments with
-                        programming.
-                    </p>
-                    <br>
-                    <p>
-                        My journey with code started from learning C++, using whatever I could find on the internet.
-                        Than my hunger of knowledge forced me to learn other languages.
-                    </p>
-                    <br>
-                    <p>
-                        For five years I have been studying electronics and computer science on the Silesian University
-                        of Technology. That was the time when I gained a lot of knowledge and also met my wife.
-                    </p>
-                    <br>
-                    <p>
-                        Today I am working for international company in automotive industry as an software tester.
-                        Working with code is my daily basis such as making my life easier by automating as much of my
-                        work as possible.
-                    </p>
-                    <br>
-                    <p>
-                        If you want to know more about me feel free to hover other dots on my timeline.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="skills-section">
-            <h1> <span class="green-text">MY</span> SKILLS </h1>
-            <div class="skill-card">
-                <img src="./img/htmlcssjs.png" alt="">
-                <h2>
-                    HTML, CSS, JS
-                </h2>
-                <p>
-                    I have acquired high level skills required to implement interface in a way such that it looks and
-                    feels like I want it to. Also I can implement advance logic behind the scenes in plain
-                    JavaScript to give my
-                    interface all functionalities I desire.
-                </p>
-            </div>
-            <div class="skill-card">
-                <img src="./img/cpp.png" alt="">
-                <h2>
-                    C++
-                </h2>
-                <p>
-                    This has been the first programming language I have learned. I have about 10 years of experience in
-                    using it. Also I have finished advanced C++ training led by Sages company.
-                </p>
-            </div>
-            <div class="skill-card">
-                <img src="./img/python.png" alt="">
-                <h2>
-                    Python
-                </h2>
-                <p>
-                    4 years of experience with Python makes me feel good when I can use it in any project. I have
-                    mastered great majority of basic and intermediate concepts and I feel quite comfortable with
-                    advanced side of it.
-                </p>
-            </div>
-            <div class="skill-card">
-                <img src="./img/nodejs.png" alt="">
-                <h2>
-                    NodeJS
-                </h2>
-                <p>
-                    Node JS surprised me with its capability of quick and easy web application implementation. Also
-                    knowledge about variety of packages, which makes work with it even easier, is not alien to me.
-                </p>
-            </div>
-            <div class="skill-card">
-                <img src="./img/mongo.png" alt="">
-                <h2>
-                    Mongodb
-                </h2>
-                <p>
-                    It has been first database engine I was working with in a project. At first concept of
-                    non-relational databases was quite ominous to me but it didn't tok much time before it clicked.
-                </p>
-            </div>
-        </div>
-
-        <div class="section" id="work-section">
-            <h1><span class="green-text">MY</span> WORK</h1>
-            <div class="work-card">
-                <img src="./img/tmpskill.png" alt="">
-                <h2>
-                    TripSplit
-                </h2>
-                <p>
-                    My app which keeps track of my daily work trips.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, error placeat! Veritatis voluptate ipsum, asperiores praesentium debitis iste. Exercitationem, quod.
-                </p>
-                <div class="links">
-                    <a href="https://github.com/MarcinZemlok/TripSplit">
-                        <img src="./img/github.png" alt="GitHub">
-                    </a>
-                    <a href="http://trip-split-265717.appspot.com/">TripSplit</a>
-                </div>
-            </div>
-            <div class="work-card">
-                <img src="./img/tmpskill.png" alt="">
-                <h2>
-                    MyHomePage
-                </h2>
-                <p>
-                    This is my custom made home page available as Chrome extension.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum earum similique ea necessitatibus molestias vitae, est atque modi quos fugit.
-                </p>
-                <div class="links">
-                    <a href="#">GoogleStore</a>
-                    <a href="https://github.com/MarcinZemlok/MyHomePage">
-                        <img src="./img/github.png" alt="GitHub">
-                    </a>
-                </div>
-            </div>
-            <div class="work-card">
-                <img src="./img/tmpskill.png" alt="">
-                <h2>
-                    StockApp
-                </h2>
-                <p>
-                    My stock app description.
-                </p>
-                <div class="links">
-                    <a href="https://github.com/MarcinZemlok/MyHomePage">
-                        <img src="./img/github.png" alt="GitHub">
-                    </a>
-                    <a href="#">GoogleStore</a>
-                </div>
-            </div>
-        </div>
-
-        <div id="contact-section">
-            <h1>PLEASE FEEL FREE TO DROP <span class="green-text">ME</span> A LINE</h1>
-            <form action="mailto:marcinzemlok@gmail.com?subject=Probably job offer :)"
-                method="post"
-                enctype="text/plain">
-                    <textarea name="mail-content"
-                        cols="40"
-                        rows="20"
-                        placeholder="Your message..."></textarea>
-                    <div>
-                        <input type="name" name="name"
-                            placeholder="Your name"><br>
-                        <!-- <input type="email" name="email"
-                            placeholder="Your e-mail address"><br> -->
-                        <input type="tel" name="phone"
-                            placeholder="Your phone number"><br>
-                        <input type="submit" value="SEND">
-                    </div>
-            </form>
-
-            <footer>
-                <div>
-                    Marcin Żemlok <br>
-                    Chrzanów, Poland <br>
-                    <hr>
-                    E-mail: <a href="mailto:marcinzemlok@gmail.com">
-                        marcinzemlok@gmail.com
-                    </a><br>
-                    Phone: <a href="tel:+48510481973">
-                        +48510481973
-                    </a>
-                </div>
-                <hr>
-                <div>
-                    <div>
-                        <a href="https://www.facebook.com/mzemlok">
-                            <img src="./img/facebook.png" alt="Facebook">
-                        </a>
-                        <a href="https://github.com/MarcinZemlok">
-                            <img src="./img/github.png" alt="GitHub">
-                        </a>
-                        <a href="https://www.linkedin.com/in/marcin-%C5%BCemlok-a70039151/">
-                            <img src="./img/linkedin.png" alt="Linkedin">
-                        </a>
-                    </div>
-                    This work is licensed under a
-                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-                        Creative Commons Attribution-ShareAlike 4.0 International License
-                    </a>.
-                </div>
-            </footer>
-        </div>
-
-        <script src="js/index.js"></script>
     </body>
-
+    <footer>
+        <script src="./js/index.js"></script>
+    </footer>
 </html>
