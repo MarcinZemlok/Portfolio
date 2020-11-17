@@ -14,6 +14,19 @@ html {
     overflow: hidden;
 }
 
+.fa-linkedin::before,
+.fa-github::before,
+.fa-facebook::before {
+    font-family: "Font Awesome 5 Brands";
+}
+
+
+.fa-mobile::before,
+.fa-envelope::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
 body {
     height: 100vh;
 
@@ -98,6 +111,26 @@ section {
     font-size: 1.5rem;
 }
 
+#contact-section {
+    width: 100%;
+    justify-content: space-around;
+}
+
+#contact-section .contact-column {
+    width: 100%;
+    flex-direction: column;
+}
+
+#contact-section .contact-column #social-icons {
+    margin: 30px auto 0 auto;
+    justify-content: space-around;
+}
+
+#contact-section p {
+    margin-top: 30px;
+    letter-spacing: 3px;
+}
+
 .bulls-eye-position {
     display: flex;
     justify-content: center;
@@ -127,14 +160,14 @@ section {
     justify-content: space-between;
 }
 
-#social-icons a img {
-    width: 30px;
+#social-icons a i {
+    font-size: 2rem;
     position: relative;
     bottom: 0px;
     transition: .2s;
 }
 
-#social-icons a img:hover {
+#social-icons a i:hover {
     bottom: 5px;
 }
 
