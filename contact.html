@@ -31,10 +31,11 @@
                     <div class="standard-round-image-container">
                         <img class="standard-round-image" src="./img/CV.jpg" alt="Profile image">
                     </div>
-                    <p>MARCIN ŻEMLOK</p>
+                    <h1>MARCIN ŻEMLOK</h1>
                     <div>
                         <p><i class="fas fa-mobile"></i> +48 510481973</p>
                         <p><i class="fas fa-envelope"></i> marcinzemlok@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 32-500 Chrzanow, Poland</p>
                         <div id="social-icons">
                             <a href="#"><i class="fab fa-facebook"></i></i></a>
                             <a href="#"><i class="fab fa-github"></i></a>
@@ -43,8 +44,17 @@
                     </div>
                 </div>
                 <div class="contact-column bulls-eye-position">
-                    <form action="mailto:marcinzemlok@gmail.com">
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <h2>EMAIL ME</h2>
+                    <form id="contact-form" action="#" class="bulls-eye-position">
+                        <input type="text" name="name" id="mail-sender-name" required>
+                        <label for="mail-sender-name">NAME</label>
+                        <input type="text" name="email" id="mail-sender-email" required>
+                        <label for="mail-sender-email">EMAIL</label>
+                        <input type="text" name="company" id="mail-sender-organization" required>
+                        <label for="mail-sender-organization">ORGANIZATION</label>
+                        <label for="mail-sender-message">MESSAGE</label>
+                        <textarea name="message" id="mail-sender-message" cols="50" rows="10" placeholder="Your message..."></textarea>
+                        <input type="submit" value="SEND">
                     </form>
                 </div>
             </div>

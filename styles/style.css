@@ -22,7 +22,8 @@ html {
 
 
 .fa-mobile::before,
-.fa-envelope::before {
+.fa-envelope::before,
+.fa-map-marker-alt::before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
@@ -116,7 +117,9 @@ section {
     justify-content: space-around;
 }
 
-#contact-section .contact-column {
+#contact-section .contact-column,
+#contact-section .contact-column form,
+#contact-section .contact-column form * {
     width: 100%;
     flex-direction: column;
 }
@@ -126,9 +129,67 @@ section {
     justify-content: space-around;
 }
 
-#contact-section p {
+#contact-section .contact-column h1,
+#contact-section .contact-column p,
+#contact-section .contact-column form {
     margin-top: 30px;
     letter-spacing: 3px;
+}
+
+#contact-section .contact-column form label {
+    margin: 20px 0 0 10px;
+
+    position: relative;
+    bottom: 40px;
+
+    font-size: .8rem;
+
+    pointer-events: none;
+    transition: .2s;
+}
+
+#contact-section .contact-column form textarea:focus + label,
+#contact-section .contact-column form input:focus + label,
+#contact-section .contact-column form textarea:valid + label,
+#contact-section .contact-column form input:valid + label {
+    bottom: 63px;
+}
+
+#contact-section .contact-column form label[for="mail-sender-message"] {
+    margin: -10px 0 0 10px;
+
+    position: relative;
+    bottom: 0;
+}
+
+#contact-section .contact-column form input[type="submit"] {
+    border: none;
+    cursor: pointer;
+    border: none !important;
+}
+
+#contact-section .contact-column form textarea,
+#contact-section .contact-column form textarea:valid,
+#contact-section .contact-column form textarea:-webkit-autofill,
+#contact-section .contact-column form textarea:-webkit-autofill:hover,
+#contact-section .contact-column form textarea:-webkit-autofill:focus,
+#contact-section .contact-column form input,
+#contact-section .contact-column form input:valid,
+#contact-section .contact-column form input:-webkit-autofill,
+#contact-section .contact-column form input:-webkit-autofill:hover,
+#contact-section .contact-column form input:-webkit-autofill:focus {
+    resize: none;
+    padding: 5px;
+
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid white;
+}
+
+#contact-section .contact-column form textarea:focus,
+#contact-section .contact-column form input:focus {
+    outline: none;
 }
 
 .bulls-eye-position {
